@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FindGym</string>
+    <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
+    <string name="Nome">tvNomeUsuario</string>
+    <string name="tvNomeUsuario">Nome</string>
+    <string name="Email">tvEmail</string>
+    <string name="tvEmail">Email</string>
+    <string name="tvCpf">CPF</string>
+    <string name="tvSenha">Senha</string>
 </resources>
