@@ -7,4 +7,5 @@
     <string name="tvEmail">Email</string>
     <string name="tvCpf">CPF</string>
     <string name="tvSenha">Senha</string>
+    <string name="title_activity_lista_usuario">ListaUsuarioActivity</string>
 </resources>
