@@ -34,7 +34,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PrincipalActivity.this, CadastroTreinadorActivity.class);
+                Intent intent = new Intent(PrincipalActivity.this, ListaTreinadorActivity.class);
                 startActivity(intent);
 
             }
