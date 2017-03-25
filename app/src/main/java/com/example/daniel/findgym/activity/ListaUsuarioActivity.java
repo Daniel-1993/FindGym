@@ -54,7 +54,7 @@ public class ListaUsuarioActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ListaUsuarioActivity.this, CadastroUsuarioActivity.class);
                 intent.putExtra("id", usr.get(i).getId().intValue());
-                intent.putExtra("nome", usr.get(i).getNomeUsuario());
+                intent.putExtra("Nome", usr.get(i).getNomeUsuario());
                 intent.putExtra("E-mail", usr.get(i).getEmail());
                 intent.putExtra("CPF", usr.get(i).getCpf());
                 intent.putExtra("Senha", usr.get(i).getSenha());
