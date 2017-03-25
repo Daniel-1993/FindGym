@@ -16,7 +16,7 @@ import com.example.daniel.findgym.model.Usuario;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
     EditText edtNomeUsuario, edtEmail, edtCPF, edtSenha;
-    Button btnSalvarUsuario, btnEditarUsuario;
+    Button btnSalvarUsuario, btnEditarUsuario, btnExcluirUsuario;
     int id;
 
     @Override
@@ -46,6 +46,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
         btnSalvarUsuario = (Button) findViewById(R.id.btnCadastroUsuario);
         btnEditarUsuario = (Button) findViewById(R.id.btnEditarUsuario);
+        btnExcluirUsuario = (Button) findViewById(R.id.btnExcluirUsuario);
 
         btnSalvarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 editar();
+            }
+        });
+
+        btnExcluirUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deletar();
             }
         });
 
@@ -97,6 +105,26 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         usuario.setSenha(edtSenha.getText().toString());
 
         usuario.save();
+
+        Toast.makeText(this,"Usuario Alterado",Toast.LENGTH_LONG).show();
+        this.finish();
+    }
+
+    public void deletar() {
+
+        edtNomeUsuario = (EditText) findViewById(R.id.edtNomeUsuario);
+        edtEmail = (EditText) findViewById(R.id.edtEmail);
+        edtCPF = (EditText) findViewById(R.id.edtCPF);
+        edtSenha = (EditText)findViewById(R.id.edtSenha);
+
+        Usuario usuario = Usuario.findById(Usuario.class, id);
+
+        usuario.setNomeUsuario(edtNomeUsuario.getText().toString());
+        usuario.setEmail(edtEmail.getText().toString());
+        usuario.setCpf(edtCPF.getText().toString());
+        usuario.setSenha(edtSenha.getText().toString());
+
+        usuario.delete();
 
         Toast.makeText(this,"Usuario Alterado",Toast.LENGTH_LONG).show();
         this.finish();

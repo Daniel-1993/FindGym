@@ -86,6 +86,13 @@
             android:id="@+id/btnEditarUsuario"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excluir"
+            android:id="@+id/btnExcluirUsuario"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </LinearLayout>
