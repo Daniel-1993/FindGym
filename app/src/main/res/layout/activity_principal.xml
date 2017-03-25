@@ -7,21 +7,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.PrincipalActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView" />
+    tools:context=".activity.PrincipalActivity"
+    android:background="@drawable/musculacao1"
+    android:backgroundTintMode="add">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Exibir Lista de Usuários"
         android:id="@+id/btnusuario"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="214dp"
-        android:layout_marginTop="72dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Exibir lista de Treinadores"
+        android:id="@+id/btntreinador"
+        android:layout_below="@+id/btnusuario"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -15,14 +15,26 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        Button btnCadastroUsuario = (Button) findViewById(R.id.btnusuario);
+        Button btnListaUsuarios = (Button) findViewById(R.id.btnusuario);
+        Button btnlistaTreinadores = (Button) findViewById(R.id.btntreinador);
 
-        btnCadastroUsuario.setOnClickListener(new View.OnClickListener(){
+        btnListaUsuarios.setOnClickListener(new View.OnClickListener(){
 
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PrincipalActivity.this, ListaUsuarioActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btnlistaTreinadores.setOnClickListener(new View.OnClickListener(){
+
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PrincipalActivity.this, CadastroTreinadorActivity.class);
                 startActivity(intent);
 
             }
