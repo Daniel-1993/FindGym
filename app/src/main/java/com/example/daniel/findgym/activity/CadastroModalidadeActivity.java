@@ -25,10 +25,6 @@ public class CadastroModalidadeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_modalidade);
-        Intent intent = getIntent();
-        id = (int) intent.getSerializableExtra("id");
-
-        String pDescricao = (String) intent.getSerializableExtra("Descricao");
 
 
         final ArrayList<Treinador> treinadores = (ArrayList) Treinador.listAll(Treinador.class);
@@ -40,7 +36,6 @@ public class CadastroModalidadeActivity extends AppCompatActivity {
         spnTreinador.setAdapter(adapter);
 
         edtDescricao = (EditText) findViewById(R.id.edtDescricao);
-        edtDescricao.setText(pDescricao);
 
 
         Button btnSalvarModalidade = (Button) findViewById(R.id.btnSalvarModalidade);
@@ -57,14 +52,14 @@ public class CadastroModalidadeActivity extends AppCompatActivity {
         btnEditarModadlidade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editar();
+
             }
         });
 
         btnExcluirModalidade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                excluir();
+
             }
         });
 
@@ -84,35 +79,4 @@ public class CadastroModalidadeActivity extends AppCompatActivity {
 
     }
 
-    public void editar() {
-
-        Treinador treinador = ((Treinador) spnTreinador.getSelectedItem());
-        edtDescricao = (EditText) findViewById(R.id.edtDescricao);
-
-        Modalidade modalidade = Modalidade.findById(Modalidade.class, id);
-
-        modalidade.setDescricao(edtDescricao.getText().toString());
-        modalidade.setTreinador(treinador);
-
-        modalidade.save();
-
-        Toast.makeText(this,"Modalidade Alterada",Toast.LENGTH_LONG).show();
-        this.finish();
-    }
-
-    public void excluir() {
-
-        edtDescricao = (EditText) findViewById(R.id.edtDescricao);
-        Treinador treinador = ((Treinador) spnTreinador.getSelectedItem());
-
-        Modalidade modalidade = Modalidade.findById(Modalidade.class, id);
-
-        modalidade.setDescricao(edtDescricao.getText().toString());
-        modalidade.setTreinador(treinador);
-
-        modalidade.delete();
-
-        Toast.makeText(this,"Modalidade Excluida",Toast.LENGTH_LONG).show();
-        this.finish();
-    }
 }

@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.daniel.findgym.R;
 
-public class CadastrotreinoActivity extends AppCompatActivity {
+public class CadastroTreinoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

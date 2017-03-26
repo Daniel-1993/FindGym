@@ -30,8 +30,10 @@ public class ModalidadeAdapter extends ArrayAdapter<Modalidade> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.linhamodalidade, parent, false);
+
         TextView descricao = (TextView) rowView.findViewById(R.id.pDescricao);
         TextView treinador = (TextView) rowView.findViewById(R.id.pTreinador);
+
         descricao.setText(listamodalidades.get(position).getDescricao());
         treinador.setText(listamodalidades.get(position).getTreinador().getNomeTreinador());
         return rowView;
