@@ -57,6 +57,13 @@ public class CadastroTreinadorActivity extends AppCompatActivity {
             }
         });
 
+        btnExcluirTreinador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deletar();
+            }
+        });
+
         if (id !=0) {
             btnSalvarTreinador.setEnabled(false);
             btnSalvarTreinador.setClickable(false);
@@ -95,4 +102,24 @@ public class CadastroTreinadorActivity extends AppCompatActivity {
         Toast.makeText(this,"Treinador Alterado",Toast.LENGTH_LONG).show();
         this.finish();
     }
+
+    public void deletar() {
+
+        edtNomeTreinador = (EditText) findViewById(R.id.edtNomeTreinador);
+        edtFormacao = (EditText) findViewById(R.id.edtFormacao);
+        edtTelefone = (EditText) findViewById(R.id.edtTelefone);
+
+        Treinador treinador = Treinador.findById(Treinador.class, id);
+
+        treinador.setNomeTreinador(edtNomeTreinador.getText().toString());
+        treinador.setFormacao(edtFormacao.getText().toString());
+        treinador.setTelefone(edtTelefone.getText().toString());
+
+        treinador.delete();
+
+        Toast.makeText(this,"Treinador Excluido",Toast.LENGTH_LONG).show();
+        this.finish();
+    }
+
+
 }
