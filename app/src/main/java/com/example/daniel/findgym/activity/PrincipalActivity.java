@@ -17,6 +17,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
         Button btnListaUsuarios = (Button) findViewById(R.id.btnusuario);
         Button btnlistaTreinadores = (Button) findViewById(R.id.btntreinador);
+        Button btnlistaModalidades = (Button) findViewById(R.id.btnModalidade);
 
         btnListaUsuarios.setOnClickListener(new View.OnClickListener(){
 
@@ -39,5 +40,17 @@ public class PrincipalActivity extends AppCompatActivity {
 
             }
         });
+
+        btnlistaModalidades.setOnClickListener(new View.OnClickListener(){
+
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PrincipalActivity.this, CadastroModalidadeActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 }

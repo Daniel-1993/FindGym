@@ -26,4 +26,12 @@
         android:id="@+id/btntreinador"
         android:layout_below="@+id/btnusuario"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Exibir Lista de Modalidades"
+        android:id="@+id/btnModalidade"
+        android:layout_below="@+id/btntreinador"
+        android:layout_alignEnd="@+id/btntreinador" />
 </RelativeLayout>
