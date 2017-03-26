@@ -42,20 +42,20 @@ public class ListaTreinadorActivity extends AppCompatActivity {
         super.onResume();
         ListView listatreinador = (ListView) findViewById(R.id.lstTreinadores);
 
-        final ArrayList<Treinador> usr = (ArrayList<Treinador>)
+        final ArrayList<Treinador> trein = (ArrayList<Treinador>)
                 Treinador.listAll(Treinador.class);
 
-        ArrayAdapter adapter = new TreinadorAdapter(this, usr);
+        ArrayAdapter adapter = new TreinadorAdapter(this, trein);
         listatreinador.setAdapter(adapter);
 
         listatreinador.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ListaTreinadorActivity.this, CadastroTreinadorActivity.class);
-                intent.putExtra("id", usr.get(i).getId().intValue());
-                intent.putExtra("NomeUsuario", usr.get(i).getNomeTreinador());
-                intent.putExtra("Formacao", usr.get(i).getFormacao());
-                intent.putExtra("Telefone", usr.get(i).getTelefone());
+                intent.putExtra("id", trein.get(i).getId().intValue());
+                intent.putExtra("NomeUsuario", trein.get(i).getNomeTreinador());
+                intent.putExtra("Formacao", trein.get(i).getFormacao());
+                intent.putExtra("Telefone", trein.get(i).getTelefone());
                 startActivity(intent);
 
             }
