@@ -9,4 +9,5 @@
     <string name="tvSenha">Senha</string>
     <string name="title_activity_lista_usuario">ListaUsuarioActivity</string>
     <string name="title_activity_lista_treinador">ListaTreinadorActivity</string>
+    <string name="title_activity_lista_modalidade">ListaModalidadeActivity</string>
 </resources>

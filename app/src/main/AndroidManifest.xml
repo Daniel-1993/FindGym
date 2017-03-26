@@ -42,7 +42,11 @@
             android:name=".activity.ListaTreinadorActivity"
             android:label="@string/title_activity_lista_treinador"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.CadastroModalidadeActivity"></activity>
+        <activity android:name=".activity.CadastroModalidadeActivity" />
+        <activity
+            android:name=".activity.ListaModalidadeActivity"
+            android:label="@string/title_activity_lista_modalidade"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
