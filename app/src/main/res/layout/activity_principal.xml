@@ -34,4 +34,12 @@
         android:id="@+id/btnModalidade"
         android:layout_below="@+id/btntreinador"
         android:layout_alignEnd="@+id/btntreinador" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Exibir Lista de Treinos"
+        android:id="@+id/btnTreino"
+        android:layout_below="@+id/btnModalidade"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

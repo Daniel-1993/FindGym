@@ -1,17 +1,30 @@
 package com.example.daniel.findgym.model;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.orm.SugarRecord;
 
 /**
  * Created by daniel on 24/03/17.
  */
-public class Usuario extends SugarRecord {
+public class Usuario extends SugarRecord implements Parcelable {
     private String nomeUsuario;
     private String email;
     private String cpf;
     private String senha;
+
+    public static final Creator<Usuario> CREATOR = new Creator<Usuario>() {
+        @Override
+        public Usuario createFromParcel(Parcel in) {
+            return new Usuario(in);
+        }
+
+        @Override
+        public Usuario[] newArray(int size) {
+            return new Usuario[size];
+        }
+    };
 
     public String getNomeUsuario() {
         return nomeUsuario;
@@ -64,5 +77,24 @@ public class Usuario extends SugarRecord {
         cpf = from.readString();
         senha = from.readString();
 
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(nomeUsuario);
+        parcel.writeString(email);
+        parcel.writeString(cpf);
+        parcel.writeString(senha);
+    }
+
+    @Override
+    public String toString()
+    {
+        return nomeUsuario;
     }
 }

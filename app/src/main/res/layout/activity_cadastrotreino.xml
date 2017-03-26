@@ -12,7 +12,7 @@
     android:weightSum="1">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="349dp"
         android:layout_height="wrap_content"
         android:text="Modalidade"
         android:id="@+id/textView13"
@@ -65,7 +65,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="Exercicos"
         android:id="@+id/textView17" />
 
     <EditText
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/edtExercicos"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.44" />
 
@@ -85,8 +85,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button2"
+            android:text="Salvar"
+            android:id="@+id/btnSalvarTreino"
             android:layout_gravity="center_horizontal" />
 
         <Button
