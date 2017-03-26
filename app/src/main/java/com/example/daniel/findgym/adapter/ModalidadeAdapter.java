@@ -20,7 +20,7 @@ public class ModalidadeAdapter extends ArrayAdapter<Modalidade> {
     private final ArrayList<Modalidade> listamodalidades;
 
     public ModalidadeAdapter(Context context, ArrayList<Modalidade> listamodalidades) {
-        super(context, R.layout.linhamodalidade);
+        super(context, R.layout.linhamodalidade, listamodalidades);
         this.context = context;
         this.listamodalidades = listamodalidades;
     }

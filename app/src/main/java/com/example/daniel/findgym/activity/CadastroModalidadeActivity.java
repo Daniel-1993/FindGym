@@ -1,5 +1,6 @@
 package com.example.daniel.findgym.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +19,17 @@ import java.util.ArrayList;
 public class CadastroModalidadeActivity extends AppCompatActivity {
     EditText edtDescricao;
     Spinner spnTreinador;
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_modalidade);
+        Intent intent = getIntent();
+        id = (int) intent.getSerializableExtra("id");
+
+        String pDescricao = (String) intent.getSerializableExtra("Descricao");
+
 
         final ArrayList<Treinador> treinadores = (ArrayList) Treinador.listAll(Treinador.class);
 
@@ -33,14 +40,31 @@ public class CadastroModalidadeActivity extends AppCompatActivity {
         spnTreinador.setAdapter(adapter);
 
         edtDescricao = (EditText) findViewById(R.id.edtDescricao);
+        edtDescricao.setText(pDescricao);
 
 
         Button btnSalvarModalidade = (Button) findViewById(R.id.btnSalvarModalidade);
+        Button btnEditarModadlidade = (Button) findViewById(R.id.btnEditarModadlidade);
+        Button btnExcluirModalidade = (Button) findViewById(R.id.btnExcluirModalidade);
 
         btnSalvarModalidade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 salvar();
+            }
+        });
+
+        btnEditarModadlidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editar();
+            }
+        });
+
+        btnExcluirModalidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                excluir();
             }
         });
 
@@ -58,5 +82,37 @@ public class CadastroModalidadeActivity extends AppCompatActivity {
         this.finish();
 
 
+    }
+
+    public void editar() {
+
+        Treinador treinador = ((Treinador) spnTreinador.getSelectedItem());
+        edtDescricao = (EditText) findViewById(R.id.edtDescricao);
+
+        Modalidade modalidade = Modalidade.findById(Modalidade.class, id);
+
+        modalidade.setDescricao(edtDescricao.getText().toString());
+        modalidade.setTreinador(treinador);
+
+        modalidade.save();
+
+        Toast.makeText(this,"Modalidade Alterada",Toast.LENGTH_LONG).show();
+        this.finish();
+    }
+
+    public void excluir() {
+
+        edtDescricao = (EditText) findViewById(R.id.edtDescricao);
+        Treinador treinador = ((Treinador) spnTreinador.getSelectedItem());
+
+        Modalidade modalidade = Modalidade.findById(Modalidade.class, id);
+
+        modalidade.setDescricao(edtDescricao.getText().toString());
+        modalidade.setTreinador(treinador);
+
+        modalidade.delete();
+
+        Toast.makeText(this,"Modalidade Excluida",Toast.LENGTH_LONG).show();
+        this.finish();
     }
 }
